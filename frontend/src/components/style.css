@@ -1,0 +1,271 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  
+  }
+  
+  .editemployee {
+   
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  h3 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 25px;
+    margin-top: -15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  /* Create Employee Section */
+  .createmp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .createmp h4 {
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .createmp input {
+    padding: 12px;
+    width: 30vw;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .createmp input:focus {
+    outline: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .createmp button {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.4s, background-color 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  .createmp button a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .createmp button:hover {
+    background-color: #2980b9;
+    animation: buttonHover 0.5s forwards;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  td {
+    padding: 1px 5px;
+    text-align:start;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+  
+  th {
+    padding: 10px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    background-color: #ecf0f1;
+    cursor: pointer;
+    transition: transform 0.4s, background-color 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  th:hover {
+    transform: rotateX(5deg);
+    background-color: #bdc3c7;
+  }
+  tr:hover {
+    background-color: #ddeaf3;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  tr:nth-child(even):hover {
+    background-color: #ddeaf3;
+  }
+  
+  td img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    transition: transform 1s;
+  }
+  
+  td img:hover {
+    animation: rotateImage 1s ease-in-out forwards;
+  }
+  
+  button {
+    padding: 8px 12px;
+  margin-right: 10px;
+    border: none;
+    background-color: #27ae60;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.5s, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #229954;
+    animation: buttonHover 0.5s forwards;
+  }
+  button a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .paging {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .paging button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.5s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .paging button:hover {
+    animation: pagingHover 0.4s forwards;
+    background-color: #2980b9;
+  }
+
+  .paging button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .paging .active {
+    background-color: #2ecc71;
+    font-weight: bold;
+  }
+  
+  
+  
+  /* Keyframes for Image Rotation */
+  @keyframes rotateImage {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  /* Keyframes for Button Hover Effect */
+  @keyframes buttonHover {
+    0% {
+      transform: perspective(100px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(100px) rotateY(10deg);
+    }
+  }
+  
+  /* Keyframes for Pagination Button Hover */
+  @keyframes pagingHover {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media only screen and (max-width: 768px) {
+    .createmp {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .createmp input {
+      width: 100%;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+  
+    table, th, td {
+      font-size: 12px;
+      
+    }
+  
+    td img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    button {
+      padding: 6px 8px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .editemployee {
+      width: 100%;
+    }
+  
+    table, th, td {
+      font-size: 10px;
+    }
+  
+    .createmp input {
+      width: 100%;
+    }
+  
+    td img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

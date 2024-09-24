@@ -1,0 +1,197 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f3f3f3, #e3e3e3);
+  color: #333;
+  
+
+
+ 
+}
+
+h2{
+  text-align: center;
+  margin-top: 20px;
+}
+p{
+ text-align: center;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #004d7a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ff7a59;
+}
+
+nav button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff7a59;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #ff5722;
+  transform: scale(1.05);
+}
+
+/* Form Styling (Login, Signup, Create Employee) */
+form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  margin: 20px auto;
+  /* animation: fadeIn 1s ease-in-out; */
+  animation: fadeInUp 1s ease-in-out;
+  
+}
+
+form input, form button ,form select{
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+
+
+/* Checkbox Group */
+.checkbox-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: -30px;
+  accent-color: #3498db; /* Modern browsers */
+}
+
+/* .checkbox-group label {
+  margin-right: 2px;
+  font-size: 16px;
+  color: #333;
+} */
+
+input[type="file"] {
+  padding: 10px;
+}
+
+
+
+form button {
+  background-color: #004d7a;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #ff7a59;
+  transform: scale(1.05);
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  } */
+
+  form {
+    width: 90%;
+  }
+
+}
+
+/* 3D Animations */
+button:hover, a:hover {
+  transform: perspective(500px) rotateX(10deg);
+}
+
+
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
