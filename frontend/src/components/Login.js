@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/auth/login`, { username, password });
-
+       
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('username', response.data.username);
       
@@ -33,10 +33,10 @@ const Login = () => {
         toast.error(errMessage,{autoClose: 2000});
       } else if (error.request) {
         console.error(error.request);  
-        alert('No response received from the server. Please try again.',{autoClose: 2000});
+        toast.error('No response received from the server. Please try again.',{autoClose: 2000});
       } else {
         console.error('Error', error.message);
-        alert('An unexpected error occurred: ' + error.message,{autoClose: 2000});
+        toast.error('An unexpected error occurred: ' + error.message,{autoClose: 2000});
       }
     }
   };
