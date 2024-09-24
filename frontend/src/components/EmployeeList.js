@@ -77,7 +77,7 @@ const EmployeeList = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <h2 style={{alignItems:"center",marginTop:"10px"}}>Loading...</h2>;
   }
 
   return (
