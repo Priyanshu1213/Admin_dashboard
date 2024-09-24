@@ -7,11 +7,13 @@ const path = require('path');
 // Get all employees
 exports.getEmployees =  async (req, res) => {
 
-  const { page = 1, search = '', sortField = 'createdAt', sortOrder = 'desc' } = req.query;
+  const {page = 1, search = '', sortField = 'createdAt', sortOrder = 'desc' } = req.query;
   const limit = 6;
   const skip = (page - 1) * limit;
+  const { username } = req.query;
 
   const query = {
+    username,
     $or: [
       { name: new RegExp(search, 'i') },
       { email: new RegExp(search, 'i') },
@@ -37,7 +39,7 @@ exports.getEmployees =  async (req, res) => {
 exports.createEmployee =  async (req, res) => {
   
   try {
-    const { name, email, mobile, designation, gender, course } = req.body;
+    const { username ,name, email, mobile, designation, gender, course } = req.body;
     const image = req.file ? req.file.path : '';
 
 // Validate fields
@@ -71,7 +73,7 @@ else if (!course || course.length < 1) {
    return res.status(400).json({ message: 'Email already exists' });
  }
 
-    const newEmployee = new Employee({ name, email, mobile, designation, gender, course, image });
+    const newEmployee = new Employee({username , name, email, mobile, designation, gender, course, image });
    
     const savedEmployee = await newEmployee.save();
     res.status(201).json({savedEmployee, message:'Employee is created'});

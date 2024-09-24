@@ -8,7 +8,9 @@ const CreateEmployee = () => {
 
   const  Navigate=new useNavigate()
 
-  const [employeeData, setEmployeeData] = useState({ name: '', email: '', mobile: '', designation: '', gender: '', course: [] });
+  const username=localStorage.getItem('username');
+
+  const [employeeData, setEmployeeData] = useState({ username:username, name: '', email: '', mobile: '', designation: '', gender: '', course: [] });
   const [image, setImage] = useState('');
 
   const handleChange = (e) => {

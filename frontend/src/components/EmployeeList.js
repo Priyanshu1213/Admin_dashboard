@@ -21,15 +21,18 @@ const EmployeeList = () => {
     const fetchEmployees = async () => {
       try {
         const token = localStorage.getItem('token');
+        const username=localStorage.getItem('username');
         const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/employees`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
           params: {
+            username:username,
             page: currentPage,
             search: searchTerm,
             sortField,
             sortOrder,
+
           },
         });
         setEmployees(response.data.employees || []); 
