@@ -234,6 +234,10 @@ body {
       margin-bottom: 10px;
       margin-top: 10px;
     }
+    table{
+      overflow-x: auto;
+      display: block;
+    }
   
     table, th, td {
       font-size: 12px;

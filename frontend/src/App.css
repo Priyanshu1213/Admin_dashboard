@@ -103,6 +103,11 @@ form select:focus {
   outline: none;
   border-color: #3498db;
 }
+.radio-group{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 
 

@@ -115,11 +115,17 @@ var response={};
           <option value="Manager">Manager</option>
           <option value="Sales">Sales</option>
         </select>
-        <select name="gender" value={employeeData.gender} onChange={handleChange} required>
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+        
+        <div className="radio-group">
+          <label>
+            <input type="radio" name="gender" value="Male" checked={employeeData.gender === 'Male'} onChange={handleChange} required />
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="Female" checked={employeeData.gender === 'Female'} onChange={handleChange} required />
+            Female
+          </label>
+        </div>
         <div className="checkbox-group">
         <input type="checkbox" name="course" value="MCA" checked={employeeData.course.includes('MCA')} onChange={handleChange} /> MCA
         <input type="checkbox" name="course" value="BCA" checked={employeeData.course.includes('BCA')} onChange={handleChange} /> BCA

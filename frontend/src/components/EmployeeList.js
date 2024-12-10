@@ -58,6 +58,7 @@ const EmployeeList = () => {
       },
     });
     setEmployees(employees.filter(employee => employee._id !== id));
+    setTotalemp(totalemp-1)
     toast.success(response.data.message,{autoClose: 2000})
   };
 
