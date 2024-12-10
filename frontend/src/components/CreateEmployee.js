@@ -54,21 +54,23 @@ const CreateEmployee = () => {
         },
       });
 
-      toast.success(response.data.message, { autoClose: 1200 });
-      setTimeout(() => {
-        Navigate('/employees');
-      }, 1800);
+      Navigate('/employees');
+      toast.success(response.data.message);
+     
+      // setTimeout(() => {
+      //   Navigate('/employees');
+      // }, 1800);
 
     } catch (error) {
 
       if (error.response) {
         const errMessage = error.response.data && error.response.data.message ? error.response.data.message : 'Server Error';
-        toast.error(errMessage, { autoClose: 2000 });
+        toast.error(errMessage);
       } else if (error.request) {
         console.error(error.request);
-        toast.error('No response received from the server. Please try again.', { autoClose: 2000 });
+        toast.error('No response received from the server. Please try again.');
       } else {
-        toast.error('An unexpected error occurred: ' + error.message, { autoClose: 2000 });
+        toast.error('An unexpected error occurred: ' + error.message);
       }
     }
   };
@@ -109,9 +111,7 @@ const CreateEmployee = () => {
         <input type="file" onChange={handleFileChange} required />
         <button type="submit">Create</button>
       </form>
-      <div style={{ position: "absolute", zIndex: 10010 }}>
-        <ToastContainer />
-      </div>
+      
     </div>
   );
 };

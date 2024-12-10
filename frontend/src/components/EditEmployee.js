@@ -80,23 +80,23 @@ var response={};
         },
       });
      
-      toast.success(response.data.message,{autoClose: 1200});
-      // navigate('/employees' );
+      toast.success(response.data.message);
+      navigate('/employees' );
 
-      setTimeout(() => {
-        navigate('/employees');
-      }, 1800); 
+      // setTimeout(() => {
+      //   navigate('/employees');
+      // }, 1800); 
 
     } catch (error) {
       if (error.response) {
         const errMessage = error.response.data && error.response.data.message ? error.response.data.message : 'Server Error';
-        toast.error(errMessage,{autoClose: 2000});
+        toast.error(errMessage);
       } else if (error.request) {
         console.error(error.request);  
-        toast.error('No response received from the server. Please try again.',{autoClose: 2000});
+        toast.error('No response received from the server. Please try again.');
       } else {
         console.error('Error', error.message);
-        toast.error('An unexpected error occurred: ' + error.message ,{autoClose: 2000});
+        toast.error('An unexpected error occurred: ' + error.message );
       }
     }
   };
@@ -140,9 +140,7 @@ var response={};
         <input type="file" onChange={handleFileChange} />
         <button type="submit">Update</button>
       </form>
-      <div style={{position:"absolute", zIndex:10010 }}>
-   <ToastContainer />
-   </div>
+     
     </div>
   );
 };

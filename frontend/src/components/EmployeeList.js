@@ -41,7 +41,7 @@ const EmployeeList = () => {
         setLoading(false);
 
       } catch (error) {
-        toast.error("Error fetching employees:", error,{autoClose: 2000});
+        toast.error("Error fetching employees:", error);
         setEmployees([]); 
         setLoading(false);
       }
@@ -59,7 +59,7 @@ const EmployeeList = () => {
     });
     setEmployees(employees.filter(employee => employee._id !== id));
     setTotalemp(totalemp-1)
-    toast.success(response.data.message,{autoClose: 2000})
+    toast.success(response.data.message)
   };
 
   
@@ -164,9 +164,7 @@ const EmployeeList = () => {
   </button>
 </div>
 
-<div style={{position:"absolute", zIndex:10010 }}>
-   <ToastContainer />
-   </div>
+
 
     </div>
   );

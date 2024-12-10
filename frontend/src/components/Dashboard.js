@@ -27,7 +27,7 @@ export default function Dashboard() {
       <div style={styles.container}>
         <h1 style={styles.heading}>Dashboard</h1>
         <div style={styles.welcomeText}>Welcome Admin Panel</div>
-        <ToastContainer />
+       
       </div>
     </>
   );

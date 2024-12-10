@@ -20,23 +20,23 @@ const Login = () => {
       localStorage.setItem('username', response.data.username);
       
       
-      // Navigate('/dashboard');
-      toast.success(response.data.message,{autoClose: 1200});
+      Navigate('/dashboard');
+      toast.success(response.data.message);
 
-      setTimeout(() => {
-        Navigate('/dashboard');
-      }, 1800); 
+      // setTimeout(() => {
+      //   Navigate('/dashboard');
+      // }, 1800); 
       
     } catch (error) {
       if (error.response) {
         const errMessage = error.response.data && error.response.data.message ? error.response.data.message : 'Server Error';
-        toast.error(errMessage,{autoClose: 2000});
+        toast.error(errMessage);
       } else if (error.request) {
         console.error(error.request);  
-        toast.error('No response received from the server. Please try again.',{autoClose: 2000});
+        toast.error('No response received from the server. Please try again.');
       } else {
         console.error('Error', error.message);
-        toast.error('An unexpected error occurred: ' + error.message,{autoClose: 2000});
+        toast.error('An unexpected error occurred: ' + error.message);
       }
     }
   };
@@ -50,9 +50,9 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       <p>Don't have an account? <Link to="/signup">Signup</Link></p>
-   <div style={{position:"absolute", zIndex:10010 }}>
+   {/* <div style={{position:"absolute", zIndex:10010 }}>
    <ToastContainer />
-   </div>
+   </div> */}
       
     </div>
   );

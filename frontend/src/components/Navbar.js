@@ -31,11 +31,11 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
-    toast.success('You are Logout',{autoClose: 1200}) ; 
-    // navigate("/"); 
-    setTimeout(() => {
-      navigate('/');
-    }, 1800);
+    toast.success('You are Logout') ; 
+    navigate("/"); 
+    // setTimeout(() => {
+    //   navigate('/');
+    // }, 1800);
        
   };
 
@@ -61,9 +61,7 @@ const Navbar = () => {
       </ul>
       
     </nav>
-    <div style={{position:"absolute", zIndex:10010 }}>
-   <ToastContainer />
-   </div>
+    
     </>
   );
 };
